@@ -213,8 +213,44 @@
             font-size: 14px;
         }
 
+        /* ========== 新增：右侧竖向导航样式 ========== */
+        .side-nav {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            z-index: 999;
+            width: 120px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .side-nav a {
+            display: block;
+            text-align: center;
+            padding: 14px 0;
+            color: #333;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            border-bottom: 1px solid #eee;
+            transition: 0.3s;
+        }
+        .side-nav a:last-child {
+            border-bottom: none;
+        }
+        .side-nav a:hover {
+            background-color: #d81e06;
+            color: #fff;
+        }
+
         /* 移动端 */
         @media (max-width: 768px) {
+            /* 手机端隐藏右侧竖导航 */
+            .side-nav {
+                display: none;
+            }
             .logo-text {
                 font-size: 18px;
             }
@@ -238,6 +274,14 @@
 </head>
 <body>
 
+<!-- 新增：右侧竖向导航 -->
+<div class="side-nav">
+    <a href="#service">主营服务</a>
+    <a href="#quote">免费报价</a>
+    <a href="#about">关于我们</a>
+    <a href="#contact">联系我们</a>
+</div>
+
 <!-- 导航 + LOGO -->
 <div class="navbar">
     <div class="container nav-wrap">
@@ -260,8 +304,8 @@
     </div>
 </div>
 
-<!-- 服务 -->
-<h2 class="section-title">主营服务</h2>
+<!-- 服务（添加锚点 id="service"） -->
+<h2 class="section-title" id="service">主营服务</h2>
 <div class="container">
     <div class="service-list">
         <div class="service-item">
@@ -283,8 +327,8 @@
     </div>
 </div>
 
-    <!-- 在线上传文件 · 免费报价（麦客表单嵌入） -->
-<section class="upload-quote">
+<!-- 在线上传文件 · 免费报价（添加锚点 id="quote"） -->
+<section class="upload-quote" id="quote">
     <h2 class="section-title">在线上传文件 · 免费报价</h2>
     <div class="container">
         <!-- 把下面 src="..." 换成你自己的麦客 iframe 链接 -->
@@ -295,8 +339,8 @@
     </div>
 </section>
     
-<!-- 关于我们 -->
-<div class="about">
+<!-- 关于我们（添加锚点 id="about"） -->
+<div class="about" id="about">
     <h2 class="section-title">关于我们</h2>
     <div class="container about-text">
         <p>本公司深耕广告印务行业多年，集创意设计、印刷生产、广告制作、现场安装于一体，配备专业设备与资深团队。
@@ -304,8 +348,8 @@
     </div>
 </div>
 
-<!-- 联系我们 -->
-<div class="contact">
+<!-- 联系我们（添加锚点 id="contact"） -->
+<div class="contact" id="contact">
     <div class="container">
         <h2>联系我们</h2>
         <p class="contact-info">服务热线：<a href="tel:08172113680">0817-2113680</a></p>
